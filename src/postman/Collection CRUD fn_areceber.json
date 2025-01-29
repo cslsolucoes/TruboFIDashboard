@@ -1,0 +1,791 @@
+
+{
+	"info": {
+		"name": "Collection CRUD fn_areceber",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Inserir fn_areceber",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						
+                           {
+                             "key": "id_cliente",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_conta",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_conta_class_finan_a",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "filial_id",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "documento",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_emissao",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_vencimento",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "valor",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "previsao",
+                             "value": "N",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "tipo_recebimento",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_carteira_cobranca",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "obs",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_inicial",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_final",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "status",
+                             "value": "A",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_saida",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "liberado",
+                             "value": "S",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "nn_boleto",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "gateway_link",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "gerencianet_token",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "tipo_conta",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_cobranca",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "status_cobranca",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_nota_gerada",
+                             "value": "0",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_im_imovel",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "impresso",
+                             "value": "N",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "arquivo_remessa_baixado",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "duplicata",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_sip",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "tipo_renegociacao",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_renegociacao",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_renegociacao_novo",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "boleto",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "forma_recebimento",
+                             "value": "M",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "credito_data",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "baixa_data",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "baixa_id_operador",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "cancelamento_id_operador",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "numero_parcela_recorrente",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "nparcela",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_contrato_principal",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "previsao_conta_receita",
+                             "value": "N",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "tipo_cobranca",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "parcela_proporcional",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "tipo_pagamento_cartao",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "titulo_protestado",
+                             "value": "N",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "desconto_condicional_valor",
+                             "value": "NULL",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "validade_desconto_condicional",
+                             "value": "NULL",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_nota_gerada_opc2",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_nota_gerada_opc3",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_nota_gerada_opc4",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_lote_geracao_financeiro_fatura",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "valor_aberto",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "valor_recebido",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "pagamento_valor",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "pagamento_data",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "valor_cancelado",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_cancelamento",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "origem_importacao",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "titulo_importado",
+                             "value": "N",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "aguardando_confirmacao_pagamento",
+                             "value": "N",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "parcelado_cartao",
+                             "value": "N",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "recebido_via_pix",
+                             "value": "N",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "estornado",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_remessa",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "nn_boleto",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "boleto",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "gateway_link",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "linha_digitavel",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_remessa_alteracao",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "motivo_alteracao",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "pix_txid",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "libera_periodo",
+                             "value": "N",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_mot_cancelamento",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_contrato",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_contrato_avulso",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "ultima_atualizacao",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "botoes_classe_finan",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_conta_class_finan",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "valor_class_finan",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "grid_classe_finan",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "json_class_finan",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_nf_gerada",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_nf_opcional2",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_nf_opcional3",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_nf_opcional4",
+                             "value": "",
+                             "type": "text"
+
+                          }
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://HOST/webservice/v1/cliente",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"fn_areceber"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar fn_areceber",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://HOST/webservice/v1/fn_areceber/Id_a_deletar",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"fn_areceber",
+						"Id_a_deletar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar fn_areceber",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_cliente\": \"\",\n    \"id_conta\": \"\",\n    \"id_conta_class_finan_a\": \"\",\n    \"filial_id\": \"\",\n    \"documento\": \"\",\n    \"data_emissao\": \"\",\n    \"data_vencimento\": \"\",\n    \"valor\": \"\",\n    \"previsao\": \"N\",\n    \"tipo_recebimento\": \"\",\n    \"id_carteira_cobranca\": \"\",\n    \"obs\": \"\",\n    \"data_inicial\": \"\",\n    \"data_final\": \"\",\n    \"status\": \"A\",\n    \"id_saida\": \"\",\n    \"liberado\": \"S\",\n    \"nn_boleto\": \"\",\n    \"gateway_link\": \"\",\n    \"gerencianet_token\": \"\",\n    \"tipo_conta\": \"\",\n    \"id_cobranca\": \"\",\n    \"status_cobranca\": \"\",\n    \"id_nota_gerada\": \"0\",\n    \"id_im_imovel\": \"\",\n    \"impresso\": \"N\",\n    \"arquivo_remessa_baixado\": \"\",\n    \"duplicata\": \"\",\n    \"id_sip\": \"\",\n    \"tipo_renegociacao\": \"\",\n    \"id_renegociacao\": \"\",\n    \"id_renegociacao_novo\": \"\",\n    \"boleto\": \"\",\n    \"forma_recebimento\": \"M\",\n    \"credito_data\": \"\",\n    \"baixa_data\": \"\",\n    \"baixa_id_operador\": \"\",\n    \"cancelamento_id_operador\": \"\",\n    \"numero_parcela_recorrente\": \"\",\n    \"nparcela\": \"\",\n    \"id_contrato_principal\": \"\",\n    \"previsao_conta_receita\": \"N\",\n    \"tipo_cobranca\": \"\",\n    \"parcela_proporcional\": \"\",\n    \"tipo_pagamento_cartao\": \"\",\n    \"titulo_protestado\": \"N\",\n    \"desconto_condicional_valor\": \"NULL\",\n    \"validade_desconto_condicional\": \"NULL\",\n    \"id_nota_gerada_opc2\": \"\",\n    \"id_nota_gerada_opc3\": \"\",\n    \"id_nota_gerada_opc4\": \"\",\n    \"id_lote_geracao_financeiro_fatura\": \"\",\n    \"valor_aberto\": \"\",\n    \"valor_recebido\": \"\",\n    \"pagamento_valor\": \"\",\n    \"pagamento_data\": \"\",\n    \"valor_cancelado\": \"\",\n    \"data_cancelamento\": \"\",\n    \"origem_importacao\": \"\",\n    \"titulo_importado\": \"N\",\n    \"aguardando_confirmacao_pagamento\": \"N\",\n    \"parcelado_cartao\": \"N\",\n    \"recebido_via_pix\": \"N\",\n    \"estornado\": \"\",\n    \"id_remessa\": \"\",\n    \"nn_boleto\": \"\",\n    \"boleto\": \"\",\n    \"gateway_link\": \"\",\n    \"linha_digitavel\": \"\",\n    \"id_remessa_alteracao\": \"\",\n    \"motivo_alteracao\": \"\",\n    \"pix_txid\": \"\",\n    \"libera_periodo\": \"N\",\n    \"id_mot_cancelamento\": \"\",\n    \"id_contrato\": \"\",\n    \"id_contrato_avulso\": \"\",\n    \"ultima_atualizacao\": \"\",\n    \"botoes_classe_finan\": \"\",\n    \"id_conta_class_finan\": \"\",\n    \"valor_class_finan\": \"\",\n    \"grid_classe_finan\": \"\",\n    \"json_class_finan\": \"\",\n    \"id_nf_gerada\": \"\",\n    \"id_nf_opcional2\": \"\",\n    \"id_nf_opcional3\": \"\",\n    \"id_nf_opcional4\": \"\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://HOST/webservice/v1/fn_areceber/Id_a_editar",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"fn_areceber",
+						"Id_a_editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar fn_areceber",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept": true,
+					"accept-encoding": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "listar",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "qtype",
+							"value": "fn_areceber.id",
+							"type": "text"
+						},
+						{
+							"key": "query",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "oper",
+							"value": ">",
+							"type": "text"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "rp",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "sortname",
+							"value": "fn_areceber.id",
+							"type": "text"
+						},
+						{
+							"key": "sortorder",
+							"value": "asc",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://HOST/webservice/v1/fn_areceber",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"fn_areceber"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
+
+                    

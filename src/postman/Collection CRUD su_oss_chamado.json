@@ -1,0 +1,647 @@
+
+{
+	"info": {
+		"name": "Collection CRUD su_oss_chamado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Inserir su_oss_chamado",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						
+                           {
+                             "key": "tipo",
+                             "value": "C",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_ticket",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "protocolo",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_assunto",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "dica_assinatura_digital",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_cliente",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_estrutura",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_filial",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_login",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_contrato_kit",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "origem_endereco",
+                             "value": "M",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "origem_endereco_estrutura",
+                             "value": "E",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "latitude",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "longitude",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "prioridade",
+                             "value": "N",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "melhor_horario_agenda",
+                             "value": "Q",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "setor",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_tecnico",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "mensagem",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "idx",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "status",
+                             "value": "A",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "gera_comissao",
+                             "value": "S",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "liberado",
+                             "value": "1",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_atendente",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "impresso",
+                             "value": "N",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "preview",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_wfl_param_os",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_wfl_tarefa",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_su_diagnostico",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "regiao_manutencao",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "origem_cadastro",
+                             "value": "P",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "origem_change_endereco",
+                             "value": "default",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "status_sla",
+                             "value": "NULL",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "ultima_atualizacao",
+                             "value": "CURRENT_TIMESTAMP",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_cidade",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "bairro",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "endereco",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "complemento",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "referencia",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_condominio",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "bloco",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "apartamento",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_abertura",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_inicio",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_hora_analise",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_agenda",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_agenda_final",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_hora_encaminhado",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_hora_assumido",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_hora_execucao",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_final",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_fechamento",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_prazo_limite",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_reservada",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_reagendar",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_prev_final",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "mensagem_resposta",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "justificativa_sla_atrasado",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "valor_total",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "valor_outras_despesas",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "valor_unit_comissao",
+                             "value": "0,00",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "valor_total_comissao",
+                             "value": "0,00",
+                             "type": "text"
+
+                          }
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://HOST/webservice/v1/cliente",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"su_oss_chamado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar su_oss_chamado",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://HOST/webservice/v1/su_oss_chamado/Id_a_deletar",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"su_oss_chamado",
+						"Id_a_deletar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar su_oss_chamado",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tipo\": \"C\",\n    \"id_ticket\": \"\",\n    \"protocolo\": \"\",\n    \"id_assunto\": \"\",\n    \"dica_assinatura_digital\": \"\",\n    \"id_cliente\": \"\",\n    \"id_estrutura\": \"\",\n    \"id_filial\": \"\",\n    \"id_login\": \"\",\n    \"id_contrato_kit\": \"\",\n    \"origem_endereco\": \"M\",\n    \"origem_endereco_estrutura\": \"E\",\n    \"latitude\": \"\",\n    \"longitude\": \"\",\n    \"prioridade\": \"N\",\n    \"melhor_horario_agenda\": \"Q\",\n    \"setor\": \"\",\n    \"id_tecnico\": \"\",\n    \"mensagem\": \"\",\n    \"idx\": \"\",\n    \"status\": \"A\",\n    \"gera_comissao\": \"S\",\n    \"liberado\": \"1\",\n    \"id_atendente\": \"\",\n    \"impresso\": \"N\",\n    \"preview\": \"\",\n    \"id_wfl_param_os\": \"\",\n    \"id_wfl_tarefa\": \"\",\n    \"id_su_diagnostico\": \"\",\n    \"regiao_manutencao\": \"\",\n    \"origem_cadastro\": \"P\",\n    \"origem_change_endereco\": \"default\",\n    \"status_sla\": \"NULL\",\n    \"ultima_atualizacao\": \"CURRENT_TIMESTAMP\",\n    \"id_cidade\": \"\",\n    \"bairro\": \"\",\n    \"endereco\": \"\",\n    \"complemento\": \"\",\n    \"referencia\": \"\",\n    \"id_condominio\": \"\",\n    \"bloco\": \"\",\n    \"apartamento\": \"\",\n    \"data_abertura\": \"\",\n    \"data_inicio\": \"\",\n    \"data_hora_analise\": \"\",\n    \"data_agenda\": \"\",\n    \"data_agenda_final\": \"\",\n    \"data_hora_encaminhado\": \"\",\n    \"data_hora_assumido\": \"\",\n    \"data_hora_execucao\": \"\",\n    \"data_final\": \"\",\n    \"data_fechamento\": \"\",\n    \"data_prazo_limite\": \"\",\n    \"data_reservada\": \"\",\n    \"data_reagendar\": \"\",\n    \"data_prev_final\": \"\",\n    \"mensagem_resposta\": \"\",\n    \"justificativa_sla_atrasado\": \"\",\n    \"valor_total\": \"\",\n    \"valor_outras_despesas\": \"\",\n    \"valor_unit_comissao\": \"0,00\",\n    \"valor_total_comissao\": \"0,00\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://HOST/webservice/v1/su_oss_chamado/Id_a_editar",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"su_oss_chamado",
+						"Id_a_editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar su_oss_chamado",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept": true,
+					"accept-encoding": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "listar",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "qtype",
+							"value": "su_oss_chamado.id",
+							"type": "text"
+						},
+						{
+							"key": "query",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "oper",
+							"value": ">",
+							"type": "text"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "rp",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "sortname",
+							"value": "su_oss_chamado.id",
+							"type": "text"
+						},
+						{
+							"key": "sortorder",
+							"value": "asc",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://HOST/webservice/v1/su_oss_chamado",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"su_oss_chamado"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
+
+                    

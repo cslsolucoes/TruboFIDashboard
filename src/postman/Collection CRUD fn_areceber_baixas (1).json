@@ -1,0 +1,365 @@
+
+{
+	"info": {
+		"name": "Collection CRUD fn_areceber_baixas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Inserir fn_areceber_baixas",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						
+                           {
+                             "key": "id_receber",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "documento",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "credito",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "historico",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "vdesconto",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "vacrescimo",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "valor_total_recebido",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_lote_retorno",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "tipo_recebimento",
+                             "value": "D",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "filial_id",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "conta_",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "conta_",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "descontos_adicionais",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "valor_liquido_recebido",
+                             "value": "",
+                             "type": "text"
+
+                          }
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://HOST/webservice/v1/cliente",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"fn_areceber_baixas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar fn_areceber_baixas",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://HOST/webservice/v1/fn_areceber_baixas/Id_a_deletar",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"fn_areceber_baixas",
+						"Id_a_deletar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar fn_areceber_baixas",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_receber\": \"\",\n    \"documento\": \"\",\n    \"data\": \"\",\n    \"credito\": \"\",\n    \"historico\": \"\",\n    \"vdesconto\": \"\",\n    \"vacrescimo\": \"\",\n    \"valor_total_recebido\": \"\",\n    \"id_lote_retorno\": \"\",\n    \"tipo_recebimento\": \"D\",\n    \"filial_id\": \"\",\n    \"conta_\": \"\",\n    \"conta_\": \"\",\n    \"descontos_adicionais\": \"\",\n    \"valor_liquido_recebido\": \"\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://HOST/webservice/v1/fn_areceber_baixas/Id_a_editar",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"fn_areceber_baixas",
+						"Id_a_editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar fn_areceber_baixas",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept": true,
+					"accept-encoding": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "listar",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "qtype",
+							"value": "fn_areceber_baixas.id",
+							"type": "text"
+						},
+						{
+							"key": "query",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "oper",
+							"value": ">",
+							"type": "text"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "rp",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "sortname",
+							"value": "fn_areceber_baixas.id",
+							"type": "text"
+						},
+						{
+							"key": "sortorder",
+							"value": "asc",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://HOST/webservice/v1/fn_areceber_baixas",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"fn_areceber_baixas"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
+
+                    

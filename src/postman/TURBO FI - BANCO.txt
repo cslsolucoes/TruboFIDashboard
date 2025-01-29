@@ -1,0 +1,41 @@
+TURBO FI
+
+# Servidor API UBUNTU-SISTEMAS
+IP: 170.254.132.2
+Login: claiton
+Senha: <senha padrão linux>
+
+IXC - MARIA DB
+HOST: ixc.turbofi.com.br / 170.254.132.20
+PORTA: 3306
+USUARIO: leitura
+SENHA: veZS6ednSL2uuGkJCob8
+DataBase: ixcprovedor
+
+https://wikiapiprovedor.ixcsoft.com.br/#
+https://ixc.turbofi.com.br/app/query-builder/index
+
+Link: https://ixc.turbofi.com.br/adm.php 
+USUARIO IXC: admin@cslsoftwares.com.br
+PASS: 1QAZxsw2@!
+
+
+API
+Token 
+admin
+92:21866391a3636467baf988a9463f111d432d07b18f056a03f1ca972ee28ac687
+claiton
+108:4c976c0435c77057d4c8bee4aa3dda6335b7055e9f959eea67810d9f216472ec
+
+
+Ordem de Serviços
+su_oss_chamado
+
+Atendimento
+su_ticket
+
+
+Cores
+$00532917 Azul  R23 G41 A83
+$0061B048 Verde R72 G176 A97 
+$00AFE895 verde claro

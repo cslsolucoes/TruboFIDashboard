@@ -1,0 +1,617 @@
+
+{
+	"info": {
+		"name": "Collection CRUD su_ticket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Inserir su_ticket",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						
+                           {
+                             "key": "tipo",
+                             "value": "C",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_estrutura",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "protocolo",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_circuito",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_cliente",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_login",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_contrato",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_filial",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_assunto",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "titulo",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "origem_endereco",
+                             "value": "M",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "origem_endereco_estrutura",
+                             "value": "E",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "endereco",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "latitude",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "longitude",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_wfl_processo",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_ticket_setor",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_responsavel_tecnico",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_criacao",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_ultima_alteracao",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "prioridade",
+                             "value": "M",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "data_reservada",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "melhor_horario_reserva",
+                             "value": "Q",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_ticket_origem",
+                             "value": "I",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_usuarios",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_resposta",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "menssagem",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "interacao_pendente",
+                             "value": "N",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "su_status",
+                             "value": "N",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_evento_status_processo",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_canal_atendimento",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "status",
+                             "value": "T",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "mensagens_nao_lida_cli",
+                             "value": "0",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "mensagens_nao_lida_sup",
+                             "value": "0",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "token",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "finalizar_atendimento",
+                             "value": "N",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "id_su_diagnostico",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "status_sla",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "origem_cadastro",
+                             "value": "P",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "ultima_atualizacao",
+                             "value": "CURRENT_TIMESTAMP",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "cliente_fone",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "cliente_telefone_comercial",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "cliente_id_operadora_celular",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "cliente_telefone_celular",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "cliente_whatsapp",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "cliente_ramal",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "cliente_email",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "cliente_contato",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "cliente_website",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "cliente_skype",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "cliente_facebook",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "atualizar_cliente",
+                             "value": "S",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "latitude_cli",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "longitude_cli",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "atualizar_login",
+                             "value": "S",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "latitude_login",
+                             "value": "",
+                             "type": "text"
+                           },
+
+                           {
+                             "key": "longitude_login",
+                             "value": "",
+                             "type": "text"
+
+                          }
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://HOST/webservice/v1/cliente",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"su_ticket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar su_ticket",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://HOST/webservice/v1/su_ticket/Id_a_deletar",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"su_ticket",
+						"Id_a_deletar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar su_ticket",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tipo\": \"C\",\n    \"id_estrutura\": \"\",\n    \"protocolo\": \"\",\n    \"id_circuito\": \"\",\n    \"id_cliente\": \"\",\n    \"id_login\": \"\",\n    \"id_contrato\": \"\",\n    \"id_filial\": \"\",\n    \"id_assunto\": \"\",\n    \"titulo\": \"\",\n    \"origem_endereco\": \"M\",\n    \"origem_endereco_estrutura\": \"E\",\n    \"endereco\": \"\",\n    \"latitude\": \"\",\n    \"longitude\": \"\",\n    \"id_wfl_processo\": \"\",\n    \"id_ticket_setor\": \"\",\n    \"id_responsavel_tecnico\": \"\",\n    \"data_criacao\": \"\",\n    \"data_ultima_alteracao\": \"\",\n    \"prioridade\": \"M\",\n    \"data_reservada\": \"\",\n    \"melhor_horario_reserva\": \"Q\",\n    \"id_ticket_origem\": \"I\",\n    \"id_usuarios\": \"\",\n    \"id_resposta\": \"\",\n    \"menssagem\": \"\",\n    \"interacao_pendente\": \"N\",\n    \"su_status\": \"N\",\n    \"id_evento_status_processo\": \"\",\n    \"id_canal_atendimento\": \"\",\n    \"status\": \"T\",\n    \"mensagens_nao_lida_cli\": \"0\",\n    \"mensagens_nao_lida_sup\": \"0\",\n    \"token\": \"\",\n    \"finalizar_atendimento\": \"N\",\n    \"id_su_diagnostico\": \"\",\n    \"status_sla\": \"\",\n    \"origem_cadastro\": \"P\",\n    \"ultima_atualizacao\": \"CURRENT_TIMESTAMP\",\n    \"cliente_fone\": \"\",\n    \"cliente_telefone_comercial\": \"\",\n    \"cliente_id_operadora_celular\": \"\",\n    \"cliente_telefone_celular\": \"\",\n    \"cliente_whatsapp\": \"\",\n    \"cliente_ramal\": \"\",\n    \"cliente_email\": \"\",\n    \"cliente_contato\": \"\",\n    \"cliente_website\": \"\",\n    \"cliente_skype\": \"\",\n    \"cliente_facebook\": \"\",\n    \"atualizar_cliente\": \"S\",\n    \"latitude_cli\": \"\",\n    \"longitude_cli\": \"\",\n    \"atualizar_login\": \"S\",\n    \"latitude_login\": \"\",\n    \"longitude_login\": \"\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://HOST/webservice/v1/su_ticket/Id_a_editar",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"su_ticket",
+						"Id_a_editar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar su_ticket",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept": true,
+					"accept-encoding": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "token após o \" : \"",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "id do usuario API",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "ixcsoft",
+						"value": "listar",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "qtype",
+							"value": "su_ticket.id",
+							"type": "text"
+						},
+						{
+							"key": "query",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "oper",
+							"value": ">",
+							"type": "text"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "rp",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "sortname",
+							"value": "su_ticket.id",
+							"type": "text"
+						},
+						{
+							"key": "sortorder",
+							"value": "asc",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://HOST/webservice/v1/su_ticket",
+					"protocol": "https",
+					"host": [
+						"HOST"
+					],
+					"path": [
+						"webservice",
+						"v1",
+						"su_ticket"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
+
+                    

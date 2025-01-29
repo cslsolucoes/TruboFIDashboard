@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F40C70AD-8173-4016-A911-E48580DDBF01}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DashBoard.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DashBoard">
+        <MSBuild Projects="DashBoard.dproj"/>
+    </Target>
+    <Target Name="DashBoard:Clean">
+        <MSBuild Projects="DashBoard.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DashBoard:Make">
+        <MSBuild Projects="DashBoard.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DashBoard"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DashBoard:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DashBoard:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
