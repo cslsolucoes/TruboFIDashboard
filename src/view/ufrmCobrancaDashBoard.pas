@@ -33,24 +33,12 @@ uses
 type
   TfrmCobrancaDashboard = class(TForm)
     pnlHeader: TRzPanel;
-    lbTituloPeriodo: TLabel;
     pnlBoton: TRzPanel;
     btnClose: TStyledSpeedButton;
     iTitulo: TImageList;
     btnFiltrar: TStyledSpeedButton;
-    lbTituloPeriodo_A: TLabel;
-    pnlDataFinal: TRzPanel;
-    lbDataFinal: TDateLabel;
-    dtDataFinal: TRzDateTimePicker;
-    pnlDataInicial: TRzPanel;
-    lbDataInicial: TDateLabel;
-    dtDataInicial: TRzDateTimePicker;
     lbTitulo: TLabel;
-    pnlPeriodo: TRzPanel;
-    Label1: TLabel;
     dsQryGrupo: TUniDataSource;
-    cbPeriodo: TComboBox;
-    lbPeriodo: TLabel;
     dsQryChamado: TUniDataSource;
     pPrincipal: TRzPanel;
     pnlGrafico: TRzPanel;
@@ -62,6 +50,20 @@ type
     pnlSetor: TRzPanel;
     lbSetor: TLabel;
     dbGridSetor: TDBGrid;
+    pnlData: TPanel;
+    lbTituloPeriodo_A: TLabel;
+    pnlDataFinal: TRzPanel;
+    lbDataFinal: TDateLabel;
+    dtDataFinal: TRzDateTimePicker;
+    pnlDataInicial: TRzPanel;
+    lbDataInicial: TDateLabel;
+    dtDataInicial: TRzDateTimePicker;
+    pnlFiltro: TPanel;
+    lbFiltro: TLabel;
+    cbFiltro: TComboBox;
+    pnlPeriodo: TRzPanel;
+    lbPeriodo: TLabel;
+    cbPeriodo: TComboBox;
 
     procedure FormShow(Sender: TObject);
 
@@ -85,6 +87,8 @@ type
     procedure grfBarrasClickSeries(Sender: TCustomChart; Series: TChartSeries;
       ValueIndex: Integer; Button: TMouseButton; Shift: TShiftState; X,
       Y: Integer);
+    procedure cbFiltroCloseUp(Sender: TObject);
+    procedure lbFiltroClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -149,6 +153,14 @@ begin
   Capture:= False;
 end;
 
+procedure TfrmCobrancaDashboard.cbFiltroCloseUp(Sender: TObject);
+begin
+  pnlFiltro.Align := alLeft;
+  pnlPeriodo.Visible := (TComboBox(Sender).ItemIndex = 0) ;
+  pnlData.Visible    := (TComboBox(Sender).ItemIndex = 1) ;
+  pnlFiltro.Align := alRight;
+end;
+
 procedure TfrmCobrancaDashboard.cbPeriodoChange(Sender: TObject);
 begin
   Periodo;
@@ -192,6 +204,8 @@ Begin
   ServicesCobranca.Ordem  :=  Ordem ;
   idOrdem := 3;
 
+  pnlPeriodo.Visible := (cbFiltro.ItemIndex = 0) ;
+  pnlData.Visible    := (cbFiltro.ItemIndex = 1) ;
 end;
 
 procedure TfrmCobrancaDashboard.Grafico1;
@@ -259,6 +273,13 @@ begin
     TLabel(sender).Color := $0061B048;
     TLabel(sender).Font.Color := clWhite;
   End;
+end;
+
+procedure TfrmCobrancaDashboard.lbFiltroClick(Sender: TObject);
+begin
+  lbFiltro.Visible := False;
+  cbFiltro.Visible := True;
+  cbFiltro.SetFocus;
 end;
 
 procedure TfrmCobrancaDashboard.MesReferencia;

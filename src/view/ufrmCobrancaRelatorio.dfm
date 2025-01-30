@@ -3,7 +3,7 @@ object frmCobranca: TfrmCobranca
   Top = 0
   BorderStyle = bsNone
   Caption = 'frmCobranca'
-  ClientHeight = 967
+  ClientHeight = 573
   ClientWidth = 1915
   Color = 15005659
   Font.Charset = DEFAULT_CHARSET
@@ -26,30 +26,8 @@ object frmCobranca: TfrmCobranca
     OnMouseDown = CaptureMouse_Down
     OnMouseMove = CaptureMouse_Move
     OnMouseUp = CaptureMouse_Up
-    object lbTituloPeriodo: TLabel
-      AlignWithMargins = True
-      Left = 1096
-      Top = 0
-      Width = 186
-      Height = 41
-      Margins.Left = 10
-      Margins.Top = 0
-      Margins.Right = 6
-      Margins.Bottom = 0
-      Align = alRight
-      Caption = 'Per'#237'odo selecionado'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -21
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      Layout = tlCenter
-      OnMouseDown = CaptureMouse_Down
-      OnMouseMove = CaptureMouse_Move
-      OnMouseUp = CaptureMouse_Up
-      ExplicitHeight = 30
-    end
+    ExplicitLeft = 8
+    ExplicitTop = -6
     object btnClose: TStyledSpeedButton
       AlignWithMargins = True
       Left = 1880
@@ -82,7 +60,7 @@ object frmCobranca: TfrmCobranca
       Width = 32
       Height = 32
       Hint = 'Filtrar'
-      Margins.Left = 10
+      Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 25
       Margins.Bottom = 4
@@ -134,41 +112,17 @@ object frmCobranca: TfrmCobranca
       ExplicitLeft = 1332
       ExplicitTop = 2
     end
-    object lbTituloPeriodo_A: TLabel
-      AlignWithMargins = True
-      Left = 1408
-      Top = 0
-      Width = 11
-      Height = 41
-      Margins.Left = 10
-      Margins.Top = 0
-      Margins.Right = 10
-      Margins.Bottom = 0
-      Align = alRight
-      Caption = #224
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -21
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      Layout = tlCenter
-      OnMouseDown = CaptureMouse_Down
-      OnMouseMove = CaptureMouse_Move
-      OnMouseUp = CaptureMouse_Up
-      ExplicitHeight = 30
-    end
     object lbTitulo: TLabel
       AlignWithMargins = True
       Left = 3
       Top = 0
-      Width = 212
+      Width = 245
       Height = 41
       Margins.Top = 0
       Margins.Right = 100
       Margins.Bottom = 0
       Align = alLeft
-      Caption = 'Detalhe de movimento'
+      Caption = 'Lista de Ordens de Servi'#231'o'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
       Font.Height = -21
@@ -180,183 +134,12 @@ object frmCobranca: TfrmCobranca
       OnMouseMove = CaptureMouse_Move
       OnMouseUp = CaptureMouse_Up
       ExplicitHeight = 30
-    end
-    object Label1: TLabel
-      AlignWithMargins = True
-      Left = 1545
-      Top = 0
-      Width = 143
-      Height = 41
-      Margins.Left = 6
-      Margins.Top = 0
-      Margins.Right = 10
-      Margins.Bottom = 0
-      Align = alRight
-      Caption = ' M'#234's refer'#234'ncia'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
-      Font.Height = -21
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      Layout = tlCenter
-      OnMouseDown = CaptureMouse_Down
-      OnMouseMove = CaptureMouse_Move
-      OnMouseUp = CaptureMouse_Up
-      ExplicitHeight = 30
-    end
-    object pnlDataFinal: TRzPanel
-      AlignWithMargins = True
-      Left = 1429
-      Top = 7
-      Width = 110
-      Height = 29
-      Margins.Left = 0
-      Margins.Top = 7
-      Margins.Right = 0
-      Margins.Bottom = 5
-      Align = alRight
-      BorderOuter = fsNone
-      Color = 15987699
-      TabOrder = 0
-      Transparent = True
-      object lbDataFinal: TDateLabel
-        AlignWithMargins = True
-        Left = 3
-        Top = 3
-        Width = 97
-        Height = 23
-        Margins.Right = 10
-        Align = alClient
-        Alignment = taCenter
-        AutoSize = False
-        Caption = '29/01/2025'
-        Color = 6402120
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -16
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentColor = False
-        ParentFont = False
-        Transparent = False
-        Layout = tlCenter
-        OnClick = On_Enter
-        OnMouseDown = CaptureMouse_Down
-        OnMouseMove = CaptureMouse_Move
-        OnMouseUp = CaptureMouse_Up
-        OnMouseEnter = LabelMouseEnter
-        OnMouseLeave = LabelMouseLeave
-        DateTimeFormat = 'dd/mm/yyyy'
-        Version = '1.1.0.0'
-        RefreshInterval = 0
-        RefreshEnabled = False
-        ExplicitLeft = 10
-      end
-      object dtDataFinal: TRzDateTimePicker
-        Left = 0
-        Top = 0
-        Width = 110
-        Height = 29
-        Margins.Left = 6
-        Margins.Bottom = 4
-        Align = alClient
-        BevelInner = bvNone
-        BevelOuter = bvNone
-        Date = 45545.000000000000000000
-        Format = ''
-        Time = 0.691542280095745800
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -16
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParseInput = True
-        ParentFont = False
-        TabOrder = 0
-        Visible = False
-        OnExit = On_Exit
-      end
-    end
-    object pnlDataInicial: TRzPanel
-      AlignWithMargins = True
-      Left = 1288
-      Top = 7
-      Width = 110
-      Height = 29
-      Cursor = crHandPoint
-      Margins.Left = 0
-      Margins.Top = 7
-      Margins.Right = 0
-      Margins.Bottom = 5
-      Align = alRight
-      BorderOuter = fsNone
-      Color = 15987699
-      TabOrder = 1
-      Transparent = True
-      object lbDataInicial: TDateLabel
-        AlignWithMargins = True
-        Left = 3
-        Top = 3
-        Width = 97
-        Height = 23
-        Margins.Right = 10
-        Align = alClient
-        Alignment = taCenter
-        AutoSize = False
-        Caption = '29/01/2025'
-        Color = 6402120
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -16
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentColor = False
-        ParentFont = False
-        Transparent = False
-        Layout = tlCenter
-        OnClick = On_Enter
-        OnMouseDown = CaptureMouse_Down
-        OnMouseMove = CaptureMouse_Move
-        OnMouseUp = CaptureMouse_Up
-        OnMouseEnter = LabelMouseEnter
-        OnMouseLeave = LabelMouseLeave
-        DateTimeFormat = 'dd/mm/yyyy'
-        Version = '1.1.0.0'
-        RefreshInterval = 0
-        RefreshEnabled = False
-        ExplicitLeft = 10
-      end
-      object dtDataInicial: TRzDateTimePicker
-        Left = 0
-        Top = 0
-        Width = 110
-        Height = 29
-        Margins.Right = 10
-        Align = alClient
-        BevelInner = bvNone
-        BevelOuter = bvNone
-        Date = 45545.000000000000000000
-        Format = ''
-        Time = 0.691542280095745800
-        Color = clBlack
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -16
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParseInput = True
-        ParentFont = False
-        TabOrder = 0
-        Visible = False
-        OnExit = On_Exit
-      end
     end
     object pnlPeriodo: TRzPanel
       AlignWithMargins = True
-      Left = 1698
+      Left = 1723
       Top = 7
-      Width = 110
+      Width = 90
       Height = 29
       Cursor = crHandPoint
       Margins.Left = 0
@@ -366,12 +149,12 @@ object frmCobranca: TfrmCobranca
       Align = alRight
       BorderOuter = fsNone
       Color = 6402120
-      TabOrder = 2
+      TabOrder = 0
       object lbPeriodo: TLabel
         AlignWithMargins = True
         Left = 3
         Top = 3
-        Width = 97
+        Width = 77
         Height = 23
         Margins.Right = 10
         Align = alClient
@@ -381,7 +164,7 @@ object frmCobranca: TfrmCobranca
         Font.Color = clWhite
         Font.Height = -16
         Font.Name = 'Segoe UI'
-        Font.Style = []
+        Font.Style = [fsBold]
         ParentFont = False
         Transparent = False
         Layout = tlCenter
@@ -394,14 +177,16 @@ object frmCobranca: TfrmCobranca
       object cbPeriodo: TComboBox
         Left = 0
         Top = 0
-        Width = 110
+        Width = 90
         Height = 30
         Margins.Top = 6
         Align = alClient
+        AutoCloseUp = True
         BevelInner = bvNone
         BevelOuter = bvNone
         Style = csOwnerDrawFixed
         Ctl3D = True
+        ExtendedUI = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -16
@@ -413,15 +198,282 @@ object frmCobranca: TfrmCobranca
         TabOrder = 0
         Visible = False
         OnChange = cbPeriodoChange
+        OnCloseUp = On_Exit
         OnExit = On_Exit
+        OnSelect = On_Exit
         Items.Strings = (
           '')
+        ExplicitWidth = 110
+      end
+    end
+    object pnlFiltro: TPanel
+      AlignWithMargins = True
+      Left = 1240
+      Top = 0
+      Width = 221
+      Height = 41
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 5
+      Margins.Bottom = 0
+      Align = alRight
+      BevelOuter = bvNone
+      ParentColor = True
+      TabOrder = 1
+      object lbFiltro: TLabel
+        AlignWithMargins = True
+        Left = 3
+        Top = 0
+        Width = 215
+        Height = 41
+        Margins.Top = 0
+        Margins.Bottom = 0
+        Align = alClient
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'M'#234's refer'#234'ncia'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -21
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        Layout = tlCenter
+        OnClick = lbFiltroClick
+        ExplicitWidth = 126
+      end
+      object cbFiltro: TComboBox
+        AlignWithMargins = True
+        Left = 3
+        Top = 8
+        Width = 215
+        Height = 28
+        Margins.Top = 8
+        Margins.Bottom = 0
+        Align = alClient
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        Style = csOwnerDrawFixed
+        Ctl3D = True
+        DropDownCount = 3
+        DropDownWidth = 160
+        ExtendedUI = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ItemHeight = 22
+        ItemIndex = 0
+        ParentCtl3D = False
+        ParentFont = False
+        TabOrder = 0
+        Text = 'M'#234's refer'#234'ncia'
+        Visible = False
+        OnCloseUp = cbFiltroCloseUp
+        OnEnter = On_Enter
+        OnExit = On_Exit
+        OnSelect = On_Exit
+        Items.Strings = (
+          'M'#234's refer'#234'ncia'
+          'Per'#237'odo selecionado')
+        ExplicitWidth = 161
+      end
+    end
+    object pnlData: TPanel
+      AlignWithMargins = True
+      Left = 1466
+      Top = 0
+      Width = 257
+      Height = 41
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
+      Align = alRight
+      BevelOuter = bvNone
+      ParentColor = True
+      TabOrder = 2
+      ExplicitLeft = 928
+      object lbTituloPeriodo_A: TLabel
+        AlignWithMargins = True
+        Left = 126
+        Top = 0
+        Width = 11
+        Height = 41
+        Margins.Left = 10
+        Margins.Top = 0
+        Margins.Right = 10
+        Margins.Bottom = 0
+        Align = alRight
+        Caption = #224
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -21
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        Layout = tlCenter
+        OnMouseDown = CaptureMouse_Down
+        OnMouseMove = CaptureMouse_Move
+        OnMouseUp = CaptureMouse_Up
+        ExplicitLeft = 1
+        ExplicitHeight = 30
+      end
+      object pnlDataFinal: TRzPanel
+        AlignWithMargins = True
+        Left = 147
+        Top = 7
+        Width = 110
+        Height = 29
+        Margins.Left = 0
+        Margins.Top = 7
+        Margins.Right = 0
+        Margins.Bottom = 5
+        Align = alRight
+        BorderOuter = fsNone
+        Color = 15987699
+        TabOrder = 0
+        Transparent = True
+        ExplicitLeft = 1
+        object lbDataFinal: TDateLabel
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
+          Width = 97
+          Height = 23
+          Margins.Right = 10
+          Align = alClient
+          Alignment = taCenter
+          AutoSize = False
+          Caption = '29/01/2025'
+          Color = 6402120
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentColor = False
+          ParentFont = False
+          Transparent = False
+          Layout = tlCenter
+          OnClick = On_Enter
+          OnMouseDown = CaptureMouse_Down
+          OnMouseMove = CaptureMouse_Move
+          OnMouseUp = CaptureMouse_Up
+          OnMouseEnter = LabelMouseEnter
+          OnMouseLeave = LabelMouseLeave
+          DateTimeFormat = 'dd/mm/yyyy'
+          Version = '1.1.0.0'
+          RefreshInterval = 0
+          RefreshEnabled = False
+          ExplicitLeft = 10
+        end
+        object dtDataFinal: TRzDateTimePicker
+          Left = 0
+          Top = 0
+          Width = 110
+          Height = 29
+          Margins.Left = 6
+          Margins.Bottom = 4
+          Align = alClient
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          Date = 45545.000000000000000000
+          Format = ''
+          Time = 0.691542280095745800
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParseInput = True
+          ParentFont = False
+          TabOrder = 0
+          Visible = False
+          OnExit = On_Exit
+        end
+      end
+      object pnlDataInicial: TRzPanel
+        AlignWithMargins = True
+        Left = 6
+        Top = 7
+        Width = 110
+        Height = 29
+        Cursor = crHandPoint
+        Margins.Left = 0
+        Margins.Top = 7
+        Margins.Right = 0
+        Margins.Bottom = 5
+        Align = alRight
+        BorderOuter = fsNone
+        Color = 15987699
+        TabOrder = 1
+        Transparent = True
+        ExplicitLeft = 1
+        object lbDataInicial: TDateLabel
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
+          Width = 97
+          Height = 23
+          Margins.Right = 10
+          Align = alClient
+          Alignment = taCenter
+          AutoSize = False
+          Caption = '29/01/2025'
+          Color = 6402120
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentColor = False
+          ParentFont = False
+          Transparent = False
+          Layout = tlCenter
+          OnClick = On_Enter
+          OnMouseDown = CaptureMouse_Down
+          OnMouseMove = CaptureMouse_Move
+          OnMouseUp = CaptureMouse_Up
+          OnMouseEnter = LabelMouseEnter
+          OnMouseLeave = LabelMouseLeave
+          DateTimeFormat = 'dd/mm/yyyy'
+          Version = '1.1.0.0'
+          RefreshInterval = 0
+          RefreshEnabled = False
+          ExplicitLeft = 10
+        end
+        object dtDataInicial: TRzDateTimePicker
+          Left = 0
+          Top = 0
+          Width = 110
+          Height = 29
+          Margins.Right = 10
+          Align = alClient
+          BevelInner = bvNone
+          BevelOuter = bvNone
+          Date = 45545.000000000000000000
+          Format = ''
+          Time = 0.691542280095745800
+          Color = clBlack
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParseInput = True
+          ParentFont = False
+          TabOrder = 0
+          Visible = False
+          OnExit = On_Exit
+        end
       end
     end
   end
   object pnlBoton: TRzPanel
     Left = 0
-    Top = 962
+    Top = 568
     Width = 1915
     Height = 5
     Align = alBottom
@@ -434,12 +486,13 @@ object frmCobranca: TfrmCobranca
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    ExplicitTop = 962
   end
   object pPrincipal: TRzPanel
     Left = 0
     Top = 41
     Width = 1915
-    Height = 921
+    Height = 527
     Align = alClient
     BorderOuter = fsNone
     BorderColor = clWhite
@@ -457,48 +510,23 @@ object frmCobranca: TfrmCobranca
     ShowHint = False
     TabOrder = 2
     VisualStyle = vsGradient
+    ExplicitHeight = 921
     object pnlChamado: TRzPanel
       Left = 0
       Top = 0
       Width = 1915
-      Height = 921
+      Height = 527
       Align = alClient
       BorderOuter = fsNone
       Color = 15987699
       TabOrder = 0
       Transparent = True
-      object lbChamado: TLabel
-        Left = 0
-        Top = 0
-        Width = 1915
-        Height = 37
-        Margins.Left = 6
-        Margins.Top = 0
-        Margins.Right = 10
-        Margins.Bottom = 0
-        Align = alTop
-        Alignment = taCenter
-        Caption = 'Lista de Ordens de Servi'#231'o'
-        Color = 15005659
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = 6402120
-        Font.Height = -27
-        Font.Name = 'Segoe UI'
-        Font.Style = [fsBold]
-        ParentColor = False
-        ParentFont = False
-        Transparent = False
-        Layout = tlCenter
-        OnMouseDown = CaptureMouse_Down
-        OnMouseMove = CaptureMouse_Move
-        OnMouseUp = CaptureMouse_Up
-        ExplicitWidth = 338
-      end
+      ExplicitTop = -2
       object dbGridChamado: TDBGrid
         Left = 0
-        Top = 201
+        Top = 164
         Width = 1915
-        Height = 720
+        Height = 363
         Align = alClient
         BorderStyle = bsNone
         Color = 15005659
@@ -610,9 +638,9 @@ object frmCobranca: TfrmCobranca
             Visible = True
           end>
       end
-      object RzPanel1: TRzPanel
+      object pnlDadosOS: TRzPanel
         Left = 0
-        Top = 37
+        Top = 0
         Width = 1915
         Height = 164
         Align = alTop
@@ -624,6 +652,7 @@ object frmCobranca: TfrmCobranca
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
+        ExplicitTop = 37
         DesignSize = (
           1915
           164)
@@ -2599,7 +2628,6 @@ object frmCobranca: TfrmCobranca
     Top = 449
   end
   object dsQryChamado: TUniDataSource
-    DataSet = ServicesCobranca.QryChamado
     Left = 504
     Top = 785
   end

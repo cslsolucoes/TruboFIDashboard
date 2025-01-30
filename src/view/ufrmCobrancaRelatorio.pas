@@ -33,30 +33,20 @@ uses
 type
   TfrmCobranca = class(TForm)
     pnlHeader: TRzPanel;
-    lbTituloPeriodo: TLabel;
     pnlBoton: TRzPanel;
     pPrincipal: TRzPanel;
     btnClose: TStyledSpeedButton;
     iTitulo: TImageList;
     btnFiltrar: TStyledSpeedButton;
-    lbTituloPeriodo_A: TLabel;
-    pnlDataFinal: TRzPanel;
-    lbDataFinal: TDateLabel;
-    dtDataFinal: TRzDateTimePicker;
-    pnlDataInicial: TRzPanel;
-    lbDataInicial: TDateLabel;
-    dtDataInicial: TRzDateTimePicker;
     lbTitulo: TLabel;
     pnlPeriodo: TRzPanel;
-    Label1: TLabel;
     pnlChamado: TRzPanel;
     dbGridChamado: TDBGrid;
-    lbChamado: TLabel;
     dsQryGrupo: TUniDataSource;
     cbPeriodo: TComboBox;
     lbPeriodo: TLabel;
     dsQryChamado: TUniDataSource;
-    RzPanel1: TRzPanel;
+    pnlDadosOS: TRzPanel;
     gbId: TGroupBox;
     edtId: TcxDBTextEdit;
     gbNome: TGroupBox;
@@ -79,6 +69,17 @@ type
     cxDBTextEdit3: TcxDBTextEdit;
     GroupBox5: TGroupBox;
     cxDBTextEdit4: TcxDBTextEdit;
+    pnlFiltro: TPanel;
+    pnlData: TPanel;
+    cbFiltro: TComboBox;
+    lbFiltro: TLabel;
+    lbTituloPeriodo_A: TLabel;
+    pnlDataFinal: TRzPanel;
+    lbDataFinal: TDateLabel;
+    dtDataFinal: TRzDateTimePicker;
+    pnlDataInicial: TRzPanel;
+    lbDataInicial: TDateLabel;
+    dtDataInicial: TRzDateTimePicker;
 
     procedure FormShow(Sender: TObject);
 
@@ -97,11 +98,14 @@ type
     procedure On_Exit(Sender: TObject);
     procedure On_KeyPress(Sender: TObject; var Key: char);
     procedure On_KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+
     procedure cbPeriodoChange(Sender: TObject);
     procedure btnFiltrarClick(Sender: TObject);
     procedure grfBarrasClickSeries(Sender: TCustomChart; Series: TChartSeries;
       ValueIndex: Integer; Button: TMouseButton; Shift: TShiftState; X,
       Y: Integer);
+    procedure lbFiltroClick(Sender: TObject);
+    procedure cbFiltroCloseUp(Sender: TObject);
 
   private
     { Private declarations }
@@ -166,6 +170,14 @@ begin
   Capture:= False;
 end;
 
+procedure TfrmCobranca.cbFiltroCloseUp(Sender: TObject);
+begin
+  pnlFiltro.Align := alLeft;
+  pnlPeriodo.Visible := (TComboBox(Sender).ItemIndex = 0) ;
+  pnlData.Visible    := (TComboBox(Sender).ItemIndex = 1) ;
+  pnlFiltro.Align := alRight;
+end;
+
 procedure TfrmCobranca.cbPeriodoChange(Sender: TObject);
 begin
   Periodo;
@@ -187,8 +199,16 @@ begin
   Case  Column.Index of
     0:Str :=  'Order by id' + tp;
     1:Str :=  'Order by status_char' + tp;
-    3:Str :=  'Order by razao' + tp;
-    4:Str :=  'Order by id_atendente' + tp;
+    2:Str :=  'Order by assunto' + tp;
+    3:Str :=  'Order by id_cliente' + tp;
+    4:Str :=  'Order by razao' + tp;
+    5:Str :=  'Order by tecnico' + tp;
+    6:Str :=  'Order by id_assunto' + tp;
+    7:Str :=  'Order by mensagem_resposta_char' + tp;
+    8:Str :=  'Order by data_inicio_m' + tp;
+    9:Str :=  'Order by data_final_m' + tp;
+    10:Str:=  'Order by data_fechamento_m' + tp;
+    11:Str:=  'Order by data_hora_assumido_m' + tp;
 
     Else     Str :=  'Order by razao asc';
   End;
@@ -209,6 +229,8 @@ Begin
   ServicesCobranca.Ordem  :=  Ordem ;
   idOrdem := 3;
 
+  pnlPeriodo.Visible := (cbFiltro.ItemIndex = 0) ;
+  pnlData.Visible    := (cbFiltro.ItemIndex = 1) ;
 end;
 
 procedure TfrmCobranca.Grafico1;
@@ -280,6 +302,13 @@ begin
   End;
 end;
 
+procedure TfrmCobranca.lbFiltroClick(Sender: TObject);
+begin
+  lbFiltro.Visible := False;
+  cbFiltro.Visible := True;
+  cbFiltro.SetFocus;
+end;
+
 procedure TfrmCobranca.MesReferencia;
 Var
   TService : TServicesCobranca;
@@ -331,6 +360,7 @@ begin
       Visible := True;
       SetFocus;
     End;
+    //TComboBox(TLabel(Sender).Parent.FindChildControl(VName)).
   End;
 end;
 
