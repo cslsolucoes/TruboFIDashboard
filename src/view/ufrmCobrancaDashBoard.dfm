@@ -146,7 +146,6 @@ object frmCobrancaDashboard: TfrmCobrancaDashboard
       BevelOuter = bvNone
       ParentColor = True
       TabOrder = 0
-      ExplicitLeft = 928
       object lbTituloPeriodo_A: TLabel
         AlignWithMargins = True
         Left = 126
@@ -186,7 +185,6 @@ object frmCobrancaDashboard: TfrmCobrancaDashboard
         Color = 15987699
         TabOrder = 0
         Transparent = True
-        ExplicitLeft = 1
         object lbDataFinal: TDateLabel
           AlignWithMargins = True
           Left = 3
@@ -197,7 +195,7 @@ object frmCobrancaDashboard: TfrmCobrancaDashboard
           Align = alClient
           Alignment = taCenter
           AutoSize = False
-          Caption = '29/01/2025'
+          Caption = '03/02/2025'
           Color = 6402120
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
@@ -261,7 +259,6 @@ object frmCobrancaDashboard: TfrmCobrancaDashboard
         Color = 15987699
         TabOrder = 1
         Transparent = True
-        ExplicitLeft = 1
         object lbDataInicial: TDateLabel
           AlignWithMargins = True
           Left = 3
@@ -272,7 +269,7 @@ object frmCobrancaDashboard: TfrmCobrancaDashboard
           Align = alClient
           Alignment = taCenter
           AutoSize = False
-          Caption = '29/01/2025'
+          Caption = '03/02/2025'
           Color = 6402120
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
@@ -335,7 +332,6 @@ object frmCobrancaDashboard: TfrmCobrancaDashboard
       BevelOuter = bvNone
       ParentColor = True
       TabOrder = 1
-      ExplicitLeft = 1240
       object lbFiltro: TLabel
         AlignWithMargins = True
         Left = 3
@@ -393,7 +389,6 @@ object frmCobrancaDashboard: TfrmCobrancaDashboard
         Items.Strings = (
           'M'#234's refer'#234'ncia'
           'Per'#237'odo selecionado')
-        ExplicitWidth = 161
       end
     end
     object pnlPeriodo: TRzPanel
@@ -411,7 +406,6 @@ object frmCobrancaDashboard: TfrmCobrancaDashboard
       BorderOuter = fsNone
       Color = 6402120
       TabOrder = 2
-      ExplicitLeft = 1723
       object lbPeriodo: TLabel
         AlignWithMargins = True
         Left = 3
@@ -460,12 +454,11 @@ object frmCobrancaDashboard: TfrmCobrancaDashboard
         TabOrder = 0
         Visible = False
         OnChange = cbPeriodoChange
-        OnCloseUp = On_Exit
+        OnCloseUp = cbPeriodoCloseUp
         OnExit = On_Exit
         OnSelect = On_Exit
         Items.Strings = (
           '')
-        ExplicitWidth = 110
       end
     end
   end
@@ -696,6 +689,8 @@ object frmCobrancaDashboard: TfrmCobrancaDashboard
         TitleFont.Height = -16
         TitleFont.Name = 'Segoe UI'
         TitleFont.Style = [fsBold]
+        OnCellClick = dbGridSetorCellClick
+        OnDrawColumnCell = dbGridSetorDrawColumnCell
         Columns = <
           item
             Expanded = False
@@ -771,6 +766,14 @@ object frmCobrancaDashboard: TfrmCobrancaDashboard
             Expanded = False
             FieldName = 'execucao'
             Title.Caption = 'Execucao'
+            Width = 120
+            Visible = True
+          end
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'total'
+            Title.Caption = 'Total'
             Width = 120
             Visible = True
           end>

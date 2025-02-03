@@ -1,12 +1,11 @@
 inherited ServicesCobranca: TServicesCobranca
-  Width = 555
+  Width = 698
   inherited FConn: TUniConnection
     ProviderName = 'MySQL'
     Port = 3306
     Database = 'ixcprovedor'
     Username = 'leitura'
     Server = 'ixc.turbofi.com.br'
-    Connected = True
     EncryptedPassword = 
       '89FF9AFFA5FFACFFC9FF9AFF9BFF91FFACFFB3FFCDFF8AFF8AFFB8FF94FFB5FF' +
       'BCFF90FF9DFFC7FF'
@@ -395,6 +394,85 @@ inherited ServicesCobranca: TServicesCobranca
       ' '
       ' from chamado')
     Left = 472
+    Top = 160
+  end
+  object QryCombobox: TUniQuery
+    Connection = FConn
+    SQL.Strings = (
+      
+        'With                                                            ' +
+        '                          '
+      
+        'chamado as (                                                    ' +
+        '                          '
+      '  Select c.razao,osa.assunto,'
+      '  CONVERT('
+      '  (Case osc.status '
+      '      When '#39'A'#39'   Then '#39'Aberto'#39
+      '      When '#39'F'#39'   Then '#39'Fechado'#39
+      '      When '#39'AN'#39'  Then '#39'Analise'#39
+      '      When '#39'AS'#39'  Then '#39'Assunto'#39
+      '      When '#39'EN'#39'  Then '#39'Encaminhado'#39
+      '      When '#39'RAG'#39' Then '#39'Reagendado'#39
+      '      When '#39'AG'#39'  Then '#39'Agendado'#39
+      '      When '#39'EX'#39'  Then '#39'Execucao'#39
+      '    Else '#39'Desconhecido'#39
+      '  End), char(15)) as status_char,'
+      
+        '  CONVERT(osc.mensagem_resposta, CHAR(250)) as mensagem_resposta' +
+        '_char,'
+      '  osc.* from su_oss_chamado osc'
+      
+        '  Inner Join ixcprovedor.cliente        c   on (c.id=osc.id_clie' +
+        'nte)'
+      
+        '  Inner Join ixcprovedor.su_oss_assunto osa on (osa.id=osc.id_as' +
+        'sunto)'
+      
+        '  WHERE 1 = 1                                                   ' +
+        '                          '
+      
+        '  And osc.setor = 32                                            ' +
+        '                       '
+      
+        '  And (DATE_FORMAT(osc.data_abertura,'#39'%Y-%m'#39')   = DATE_FORMAT('#39'2' +
+        '024-12-01'#39','#39'%Y-%m'#39')  '
+      
+        '  or   DATE_FORMAT(osc.data_fechamento,'#39'%Y-%m'#39') = DATE_FORMAT('#39'2' +
+        '024-12-01'#39','#39'%Y-%m'#39')) '
+      '  ),'
+      'assunto as ('
+      '  Select assunto from chamado where 1 = 1 '
+      
+        '  And ( DATE_FORMAT(data_abertura,'#39'%Y-%m'#39')   = DATE_FORMAT('#39'2025' +
+        '-01-01'#39','#39'%Y-%m'#39')    '
+      
+        '  or    DATE_FORMAT(data_fechamento,'#39'%Y-%m'#39') = DATE_FORMAT('#39'2025' +
+        '-01-01'#39','#39'%Y-%m'#39')  ) '
+      '  GROUP BY assunto'
+      '  Order by assunto Asc'
+      
+        '),                                                              ' +
+        '                        '
+      
+        'users as (                                                      ' +
+        '                          '
+      
+        '  (Select c.id_tecnico,UPPER(u.funcionario) as funcionario from ' +
+        'chamado c                  '
+      
+        '  inner join ixcprovedor.funcionarios u on (u.id=c.id_tecnico)  ' +
+        '                          '
+      
+        '  WHERE 1 = 1                                                   ' +
+        '                          '
+      '  GROUP BY c.id_tecnico,u.funcionario) UNION'
+      
+        '  Select 0 as id_tecnico, '#39'Ainda n'#227'o distribuidas'#39' as funcionari' +
+        'o'
+      '  )'
+      'Select * from assunto')
+    Left = 552
     Top = 160
   end
 end

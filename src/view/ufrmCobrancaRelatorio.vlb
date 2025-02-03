@@ -4,9 +4,6 @@ Coordinates=1060,1728,65,58
 [pPrincipal]
 Coordinates=622,1728,71,58
 
-[pnlPeriodo]
-Coordinates=703,1728,76,58
-
 [dbGridChamado]
 Coordinates=1304,1728,108,36
 Visible=True
@@ -17,14 +14,8 @@ Coordinates=789,1728,74,58
 [iTitulo]
 Coordinates=0,319,49,36
 
-[lbTitulo]
-Coordinates=555,1728,57,58
-
 [btnClose]
 Coordinates=1229,1728,65,36
-
-[lbPeriodo]
-Coordinates=1116,10,69,58
 
 [pnlChamado]
 Coordinates=963,1728,87,58
@@ -48,14 +39,8 @@ Coordinates=10,10,199,1708
 Coordinates=10,1728,182,58
 
 []
-Coordinates=202,1728,53,58
+Coordinates=703,1728,76,58
 
 [dsQryGrupo]
 Coordinates=341,232,49,36
-
-[btnFiltrar]
-Coordinates=1422,1728,74,36
-
-[cbPeriodo]
-Coordinates=219,10,101,124
 

@@ -1386,6 +1386,7 @@ object frmPrincipal: TfrmPrincipal
         ParentBiDiMode = False
         ParentFont = False
         Layout = tlCenter
+        Visible = False
         ExplicitHeight = 37
       end
       object Image2: TImage
@@ -1449,6 +1450,7 @@ object frmPrincipal: TfrmPrincipal
         ShowHint = False
         Stretch = True
         Transparent = True
+        Visible = False
         ExplicitLeft = 244
         ExplicitTop = 10
         ExplicitHeight = 30
@@ -11648,7 +11650,7 @@ object frmPrincipal: TfrmPrincipal
         Height = 49
         Margins.Left = 0
         Align = alClient
-        Caption = 'Cobran'#231'a'
+        Caption = 'Relat'#243'rios'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -16
@@ -11656,7 +11658,7 @@ object frmPrincipal: TfrmPrincipal
         Font.Style = []
         ParentFont = False
         Layout = tlCenter
-        ExplicitWidth = 66
+        ExplicitWidth = 70
         ExplicitHeight = 21
       end
     end

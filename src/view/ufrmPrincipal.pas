@@ -48,18 +48,19 @@ type
     btnCobrancaRelatorio: TStyledSpeedButton;
     lbCobrancaRelatorio: TLabel;
 
-    procedure btnCloseClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+
+    procedure btnCloseClick(Sender: TObject);
     procedure btnMenuClick(Sender: TObject);
     procedure btnCobrancaGraficoClick(Sender: TObject);
     procedure btnMinimizarClick(Sender: TObject);
     procedure btnNormalClick(Sender: TObject);
+    procedure btnCobrancaRelatorioClick(Sender: TObject);
 
     procedure CaptureMouse_Down(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure CaptureMouse_Move(Sender: TObject; Shift: TShiftState; X, Y: Integer );
     procedure CaptureMouse_Up(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-    procedure FormCreate(Sender: TObject);
-    procedure btnCobrancaRelatorioClick(Sender: TObject);
 
   private
     { Private declarations }

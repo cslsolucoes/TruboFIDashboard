@@ -89,6 +89,10 @@ type
       Y: Integer);
     procedure cbFiltroCloseUp(Sender: TObject);
     procedure lbFiltroClick(Sender: TObject);
+    procedure dbGridSetorCellClick(Column: TColumn);
+    procedure cbPeriodoCloseUp(Sender: TObject);
+    procedure dbGridSetorDrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
 
   private
     { Private declarations }
@@ -100,14 +104,13 @@ type
     Procedure RefreshConsulta;
     Procedure Consulta;
 
-
     { Public declarations }
   end;
 
 var
   frmCobrancaDashboard: TfrmCobrancaDashboard;
-  Capture : Boolean;
-  px,py : Integer;
+  Capture     : Boolean;
+  px,py       : Integer;
   Ordem       : String;
   idOrdem     : integer;
 
@@ -122,7 +125,8 @@ end;
 
 procedure TfrmCobrancaDashboard.btnFiltrarClick(Sender: TObject);
 begin
- Periodo;
+ If cbFiltro.ItemIndex = 0 Then
+   Periodo;
  RefreshConsulta;
 end;
 
@@ -166,6 +170,12 @@ begin
   Periodo;
 end;
 
+procedure TfrmCobrancaDashboard.cbPeriodoCloseUp(Sender: TObject);
+begin
+  Periodo;
+  On_Exit(Sender);
+end;
+
 procedure TfrmCobrancaDashboard.dbGridChamadoTitleClick(Column: TColumn);
 Var
   Str : String;
@@ -179,19 +189,72 @@ begin
   End
   Else tp := ' Asc';
 
+  str := 'Order by ' + Column.FieldName + tp;
+
+ {
   Case  Column.Index of
     0:Str :=  'Order by id' + tp;
     1:Str :=  'Order by status_char' + tp;
-    3:Str :=  'Order by razao' + tp;
-    4:Str :=  'Order by id_atendente' + tp;
+    2:Str :=  'Order by assunto' + tp;
+    3:Str :=  'Order by id_cliente' + tp;
+    4:Str :=  'Order by razao' + tp;
+    5:Str :=  'Order by tecnico' + tp;
+    6:Str :=  'Order by id_assunto' + tp;
+    7:Str :=  'Order by mensagem_resposta_char' + tp;
+    8:Str :=  'Order by data_inicio_m' + tp;
+    9:Str :=  'Order by data_final_m' + tp;
+    10:Str:=  'Order by data_abertura_m' + tp;
+    11:Str:=  'Order by data_fechamento_m' + tp;
+    12:Str:=  'Order by data_hora_assumido_m' + tp;
 
     Else     Str :=  'Order by razao asc';
   End;
+}
+
   idOrdem := Column.Index;
   Ordem   := Str;
   ServicesCobranca.Ordem  :=  Str ;
   RefreshConsulta;
 //  ServicesCobranca.ListaChamado(32,dtDataInicial.DateTime);
+end;
+
+procedure TfrmCobrancaDashboard.dbGridSetorCellClick(Column: TColumn);
+begin
+  If TUniQuery(dsQryGrupo.DataSet).FieldByName('funcionario').IsNull
+  Then Exit;
+
+  With ServicesCobranca do
+  Begin
+    Filtro := True;
+//    FiltroSQL := 'And tecnico_id = ' + TUniQuery(dsQryGrupo.DataSet).FieldByName('id_tecnico').AsString;
+    FiltroSQL := 'And upper(tecnico) = upper(' + QuotedStr(TUniQuery(dsQryGrupo.DataSet).FieldByName('funcionario').AsString) + ')';
+    If cbFiltro.ItemIndex = 0 Then Begin
+
+      ListaChamado(32,dtDataInicial.DateTime);
+    End
+    Else Begin
+      If cbFiltro.ItemIndex = 1 Then
+        ListaChamado(32,dtDataInicial.DateTime, dtDataFinal.DateTime);
+    End;
+    FiltroSQL := '';
+    Filtro := False;
+  End;
+  TNavigation.OpenModal(TfrmCobrancaDetalhes,frmCobrancaDetalhes);
+end;
+
+procedure TfrmCobrancaDashboard.dbGridSetorDrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+  if TDBGrid(Sender).DataSource.DataSet.FieldByName('id_tecnico').IsNull   {substituir pela sua condição}
+  then Begin
+    TDBGrid(Sender).Canvas.Font.Color:=clRed;
+    TDBGrid(Sender).Canvas.Font.Style := [TFontStyle.fsBold];
+    TDBGrid(Sender).Canvas.Brush.Color:=clSkyBlue ;
+  End;
+
+  TDBGrid(Sender).Canvas.FillRect(Rect);
+  TDBGrid(Sender).DefaultDrawColumnCell(Rect,DataCol,Column,State);
+
 end;
 
 procedure TfrmCobrancaDashboard.FormShow(Sender: TObject);
@@ -246,9 +309,10 @@ procedure TfrmCobrancaDashboard.grfBarrasClickSeries(Sender: TCustomChart;
   Series: TChartSeries; ValueIndex: Integer; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
 begin
- ShowMessage(Series.SeriesIndex.ToString  + ' grfBarrasClickSeries ' + Series.SeriesIndex.ToString + '  ' + Series.XLabel[ValueIndex]);
 
- TNavigation.OpenModal(TfrmCobrancaDetalhes,frmCobrancaDetalhes);
+// ShowMessage(' grfBarrasClickSeries ' + Series.SeriesIndex.ToString + '  ' + Series.XLabel[ValueIndex] + ' ' + ValueIndex.ToString);
+
+// TNavigation.OpenModal(TfrmCobrancaDetalhes,frmCobrancaDetalhes);
 end;
 
 procedure TfrmCobrancaDashboard.LabelMouseEnter(Sender: TObject);
@@ -434,16 +498,28 @@ begin
   Begin
     GraphicBar;
     GraphicPie;
+
+    If cbFiltro.ItemIndex = 0 Then Begin
+      ListaGrupos(32,dtDataInicial.DateTime);
+    End
+    Else Begin
+      If cbFiltro.ItemIndex = 1 Then
+        ListaGrupos(32,dtDataInicial.DateTime, dtDataFinal.DateTime);
+    End;
+  End;
+{
+  With ServicesCobranca do
+  Begin
     ListaGrupos(32,dtDataInicial.DateTime);
   //  ListaChamado(32,dtDataInicial.DateTime);
   End;
+}
 end;
 
 procedure TfrmCobrancaDashboard.RefreshConsulta;
 begin
 
   dsQryGrupo.DataSet := nil;
- // dsQryChamado.DataSet := nil;
 
   pPrincipal.Parent.Parent.Visible := false;
   TLoading.Show;

@@ -3,8 +3,8 @@ object frmCobrancaDetalhes: TfrmCobrancaDetalhes
   Top = 0
   BorderStyle = bsNone
   Caption = 'frmCobrancaDetalhes'
-  ClientHeight = 601
-  ClientWidth = 953
+  ClientHeight = 797
+  ClientWidth = 1413
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,11 +12,12 @@ object frmCobrancaDetalhes: TfrmCobrancaDetalhes
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnShow = FormShow
   TextHeight = 15
   object pnlBoton: TRzPanel
     Left = 0
-    Top = 596
-    Width = 953
+    Top = 792
+    Width = 1413
     Height = 5
     Align = alBottom
     BorderOuter = fsNone
@@ -28,13 +29,11 @@ object frmCobrancaDetalhes: TfrmCobrancaDetalhes
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    ExplicitTop = 557
-    ExplicitWidth = 937
   end
   object pnlHeader: TRzPanel
     Left = 0
     Top = 0
-    Width = 953
+    Width = 1413
     Height = 41
     Align = alTop
     BorderOuter = fsNone
@@ -47,10 +46,9 @@ object frmCobrancaDetalhes: TfrmCobrancaDetalhes
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
-    ExplicitWidth = 937
     object btnClose: TStyledSpeedButton
       AlignWithMargins = True
-      Left = 918
+      Left = 1378
       Top = 5
       Width = 30
       Height = 32
@@ -79,8 +77,8 @@ object frmCobrancaDetalhes: TfrmCobrancaDetalhes
   object pnlPrincipal: TRzPanel
     Left = 0
     Top = 41
-    Width = 953
-    Height = 555
+    Width = 1413
+    Height = 751
     Align = alClient
     BorderOuter = fsNone
     BorderColor = clWhite
@@ -98,21 +96,509 @@ object frmCobrancaDetalhes: TfrmCobrancaDetalhes
     ShowHint = False
     TabOrder = 2
     VisualStyle = vsGradient
-    ExplicitWidth = 937
-    ExplicitHeight = 516
-    object DBGrid1: TDBGrid
+    object dbGridChamado: TDBGrid
       Left = 0
-      Top = 0
-      Width = 953
-      Height = 555
+      Top = 164
+      Width = 1413
+      Height = 587
       Align = alClient
-      ParentColor = True
+      BorderStyle = bsNone
+      Color = 15005659
+      DataSource = dsQryGrupo
+      DrawingStyle = gdsGradient
+      FixedColor = clHotLight
+      GradientEndColor = 6402120
+      GradientStartColor = 15005659
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack, dgThumbTracking]
+      ParentFont = False
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
+      TitleFont.Color = clBlack
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
-      TitleFont.Style = []
+      TitleFont.Style = [fsBold]
+      Columns = <
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'id'
+          Title.Caption = 'Id OS'
+          Width = 77
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'status_char'
+          Title.Caption = 'Status'
+          Width = 93
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'assunto'
+          Title.Caption = 'Assunto'
+          Width = 360
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'id_cliente'
+          Title.Caption = 'Id Cliente'
+          Width = 81
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'razao'
+          Title.Caption = 'Nome Cliente'
+          Width = 320
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'tecnico'
+          Title.Caption = 'Atendente'
+          Width = 297
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'id_assunto'
+          Title.Caption = 'Id Assunto'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'mensagem_resposta_char'
+          Title.Caption = 'Mensagem'
+          Visible = False
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'data_inicio_m'
+          Title.Caption = 'Dt Inical'
+          Width = 130
+          Visible = True
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'data_final_m'
+          Title.Caption = 'Dt Final'
+          Width = 130
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'data_abertura_m'
+          Title.Caption = 'Dt Abertura'
+          Width = 130
+          Visible = True
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'data_fechamento_m'
+          Title.Caption = 'Dt Fechado'
+          Width = 130
+          Visible = True
+        end
+        item
+          Alignment = taCenter
+          Expanded = False
+          FieldName = 'data_hora_assumido_m'
+          Title.Caption = 'Dt Assumido'
+          Width = 130
+          Visible = True
+        end>
+    end
+    object pnlDadosOS: TRzPanel
+      Left = 0
+      Top = 0
+      Width = 1413
+      Height = 164
+      Align = alTop
+      Color = 6402120
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = 11528341
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 1
+      object gbId: TGroupBox
+        Left = 6
+        Top = 3
+        Width = 75
+        Height = 50
+        Caption = 'Id OS'
+        TabOrder = 0
+        object edtId: TcxDBTextEdit
+          AlignWithMargins = True
+          Left = 8
+          Top = 19
+          Margins.Left = 6
+          Margins.Top = 0
+          Align = alClient
+          DataBinding.DataField = 'id'
+          DataBinding.DataSource = dsQryGrupo
+          ParentFont = False
+          Properties.Alignment.Horz = taLeftJustify
+          Properties.CharCase = ecUpperCase
+          Style.BorderStyle = ebsNone
+          Style.Color = 6402120
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clBlack
+          Style.Font.Height = -15
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.TextStyle = [fsBold]
+          Style.TransparentBorder = False
+          Style.IsFontAssigned = True
+          TabOrder = 0
+          Width = 62
+        end
+      end
+      object gbNome: TGroupBox
+        Left = 167
+        Top = 3
+        Width = 474
+        Height = 50
+        Caption = 'Nome Cliente'
+        TabOrder = 1
+        object edtNome: TcxDBTextEdit
+          AlignWithMargins = True
+          Left = 8
+          Top = 19
+          Margins.Left = 6
+          Margins.Top = 0
+          Align = alClient
+          DataBinding.DataField = 'razao'
+          DataBinding.DataSource = dsQryGrupo
+          ParentFont = False
+          Properties.Alignment.Horz = taLeftJustify
+          Properties.CharCase = ecUpperCase
+          Style.BorderStyle = ebsNone
+          Style.Color = 6402120
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clBlack
+          Style.Font.Height = -15
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.TextStyle = [fsBold]
+          Style.TransparentBorder = False
+          Style.IsFontAssigned = True
+          TabOrder = 0
+          Width = 461
+        end
+      end
+      object gbIdCliente: TGroupBox
+        Left = 87
+        Top = 3
+        Width = 74
+        Height = 50
+        Caption = 'Id Cliente'
+        TabOrder = 2
+        object edtIdCliente: TcxDBTextEdit
+          AlignWithMargins = True
+          Left = 8
+          Top = 19
+          Margins.Left = 6
+          Margins.Top = 0
+          Align = alClient
+          DataBinding.DataField = 'id_cliente'
+          DataBinding.DataSource = dsQryGrupo
+          ParentFont = False
+          Properties.Alignment.Horz = taLeftJustify
+          Properties.CharCase = ecUpperCase
+          Style.BorderStyle = ebsNone
+          Style.Color = 6402120
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clBlack
+          Style.Font.Height = -15
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.TextStyle = [fsBold]
+          Style.TransparentBorder = False
+          Style.IsFontAssigned = True
+          TabOrder = 0
+          Width = 61
+        end
+      end
+      object gbAssunto: TGroupBox
+        Left = 6
+        Top = 54
+        Width = 419
+        Height = 50
+        Caption = 'Assunto'
+        TabOrder = 3
+        object edtAssunto: TcxDBTextEdit
+          AlignWithMargins = True
+          Left = 8
+          Top = 19
+          Margins.Left = 6
+          Margins.Top = 0
+          Align = alClient
+          DataBinding.DataField = 'assunto'
+          DataBinding.DataSource = dsQryGrupo
+          ParentFont = False
+          Properties.Alignment.Horz = taLeftJustify
+          Properties.CharCase = ecUpperCase
+          Style.BorderStyle = ebsNone
+          Style.Color = 6402120
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clBlack
+          Style.Font.Height = -15
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.TextStyle = [fsBold]
+          Style.TransparentBorder = False
+          Style.IsFontAssigned = True
+          TabOrder = 0
+          Width = 406
+        end
+      end
+      object gbStatus: TGroupBox
+        Left = 431
+        Top = 54
+        Width = 210
+        Height = 50
+        Caption = 'Status'
+        TabOrder = 4
+        object edtStatus: TcxDBTextEdit
+          AlignWithMargins = True
+          Left = 8
+          Top = 19
+          Margins.Left = 6
+          Margins.Top = 0
+          Align = alClient
+          DataBinding.DataField = 'status_char'
+          DataBinding.DataSource = dsQryGrupo
+          ParentFont = False
+          Properties.Alignment.Horz = taLeftJustify
+          Properties.CharCase = ecUpperCase
+          Style.BorderStyle = ebsNone
+          Style.Color = 6402120
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clBlack
+          Style.Font.Height = -15
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.TextStyle = [fsBold]
+          Style.TransparentBorder = False
+          Style.IsFontAssigned = True
+          TabOrder = 0
+          Width = 197
+        end
+      end
+      object gbHistorico: TGroupBox
+        Left = 6
+        Top = 105
+        Width = 210
+        Height = 50
+        Caption = 'Atendente'
+        TabOrder = 5
+        object edtHistorico: TcxDBTextEdit
+          AlignWithMargins = True
+          Left = 8
+          Top = 19
+          Margins.Left = 6
+          Margins.Top = 0
+          Align = alClient
+          DataBinding.DataField = 'tecnico'
+          DataBinding.DataSource = dsQryGrupo
+          ParentFont = False
+          Properties.Alignment.Horz = taLeftJustify
+          Properties.CharCase = ecUpperCase
+          Style.BorderStyle = ebsNone
+          Style.Color = 6402120
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clBlack
+          Style.Font.Height = -15
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.TextStyle = [fsBold]
+          Style.TransparentBorder = False
+          Style.IsFontAssigned = True
+          TabOrder = 0
+          Width = 197
+        end
+      end
+      object GroupBox1: TGroupBox
+        Left = 647
+        Top = 2
+        Width = 764
+        Height = 160
+        Align = alRight
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Caption = 'Historico'
+        TabOrder = 6
+        object cxDBMemo1: TcxDBMemo
+          Left = 2
+          Top = 19
+          Align = alClient
+          DataBinding.DataField = 'mensagem'
+          DataBinding.DataSource = dsQryGrupo
+          DragCursor = crHandPoint
+          DragMode = dmAutomatic
+          ParentFont = False
+          Properties.CharCase = ecUpperCase
+          Properties.ScrollBars = ssBoth
+          Properties.WantTabs = True
+          Style.BorderStyle = ebsNone
+          Style.Color = 6402120
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clBlack
+          Style.Font.Height = -15
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.TransparentBorder = True
+          Style.IsFontAssigned = True
+          TabOrder = 0
+          ExplicitWidth = 1259
+          ExplicitHeight = 131
+          Height = 139
+          Width = 760
+        end
+      end
+      object GroupBox2: TGroupBox
+        Left = 222
+        Top = 105
+        Width = 100
+        Height = 50
+        Caption = 'Data Inicial'
+        TabOrder = 7
+        object cxDBTextEdit1: TcxDBTextEdit
+          AlignWithMargins = True
+          Left = 8
+          Top = 19
+          Margins.Left = 6
+          Margins.Top = 0
+          Align = alClient
+          DataBinding.DataField = 'data_inicio_m'
+          DataBinding.DataSource = dsQryGrupo
+          ParentFont = False
+          Properties.Alignment.Horz = taLeftJustify
+          Properties.CharCase = ecUpperCase
+          Style.BorderStyle = ebsNone
+          Style.Color = 6402120
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clBlack
+          Style.Font.Height = -15
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.TextStyle = [fsBold]
+          Style.TransparentBorder = False
+          Style.IsFontAssigned = True
+          TabOrder = 0
+          Width = 87
+        end
+      end
+      object GroupBox3: TGroupBox
+        Left = 328
+        Top = 105
+        Width = 100
+        Height = 50
+        Caption = 'Data Final'
+        TabOrder = 8
+        object cxDBTextEdit2: TcxDBTextEdit
+          AlignWithMargins = True
+          Left = 8
+          Top = 19
+          Margins.Left = 6
+          Margins.Top = 0
+          Align = alClient
+          DataBinding.DataField = 'data_final_m'
+          DataBinding.DataSource = dsQryGrupo
+          ParentFont = False
+          Properties.Alignment.Horz = taLeftJustify
+          Properties.CharCase = ecUpperCase
+          Style.BorderStyle = ebsNone
+          Style.Color = 6402120
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clBlack
+          Style.Font.Height = -15
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.TextStyle = [fsBold]
+          Style.TransparentBorder = False
+          Style.IsFontAssigned = True
+          TabOrder = 0
+          Width = 87
+        end
+      end
+      object GroupBox4: TGroupBox
+        Left = 434
+        Top = 105
+        Width = 100
+        Height = 50
+        Caption = 'Data Fechar'
+        TabOrder = 9
+        object cxDBTextEdit3: TcxDBTextEdit
+          AlignWithMargins = True
+          Left = 8
+          Top = 19
+          Margins.Left = 6
+          Margins.Top = 0
+          Align = alClient
+          DataBinding.DataField = 'data_fechamento_m'
+          DataBinding.DataSource = dsQryGrupo
+          ParentFont = False
+          Properties.Alignment.Horz = taLeftJustify
+          Properties.CharCase = ecUpperCase
+          Style.BorderStyle = ebsNone
+          Style.Color = 6402120
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clBlack
+          Style.Font.Height = -15
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.TextStyle = [fsBold]
+          Style.TransparentBorder = False
+          Style.IsFontAssigned = True
+          TabOrder = 0
+          Width = 87
+        end
+      end
+      object GroupBox5: TGroupBox
+        Left = 540
+        Top = 105
+        Width = 100
+        Height = 50
+        Caption = 'Dt Assumeida'
+        TabOrder = 10
+        object cxDBTextEdit4: TcxDBTextEdit
+          AlignWithMargins = True
+          Left = 8
+          Top = 19
+          Margins.Left = 6
+          Margins.Top = 0
+          Align = alClient
+          DataBinding.DataField = 'data_hora_assumido_m'
+          DataBinding.DataSource = dsQryGrupo
+          ParentFont = False
+          Properties.Alignment.Horz = taLeftJustify
+          Properties.CharCase = ecUpperCase
+          Style.BorderStyle = ebsNone
+          Style.Color = 6402120
+          Style.Font.Charset = DEFAULT_CHARSET
+          Style.Font.Color = clBlack
+          Style.Font.Height = -15
+          Style.Font.Name = 'Segoe UI'
+          Style.Font.Style = [fsBold]
+          Style.TextStyle = [fsBold]
+          Style.TransparentBorder = False
+          Style.IsFontAssigned = True
+          TabOrder = 0
+          Width = 87
+        end
+      end
     end
   end
   object iTitulo: TImageList
@@ -1714,5 +2200,9 @@ object frmCobrancaDetalhes: TfrmCobrancaDetalhes
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000}
+  end
+  object dsQryGrupo: TUniDataSource
+    Left = 416
+    Top = 241
   end
 end

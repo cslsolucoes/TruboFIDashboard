@@ -37,14 +37,9 @@ type
     pPrincipal: TRzPanel;
     btnClose: TStyledSpeedButton;
     iTitulo: TImageList;
-    btnFiltrar: TStyledSpeedButton;
-    lbTitulo: TLabel;
-    pnlPeriodo: TRzPanel;
     pnlChamado: TRzPanel;
     dbGridChamado: TDBGrid;
     dsQryGrupo: TUniDataSource;
-    cbPeriodo: TComboBox;
-    lbPeriodo: TLabel;
     dsQryChamado: TUniDataSource;
     pnlDadosOS: TRzPanel;
     gbId: TGroupBox;
@@ -69,10 +64,18 @@ type
     cxDBTextEdit3: TcxDBTextEdit;
     GroupBox5: TGroupBox;
     cxDBTextEdit4: TcxDBTextEdit;
-    pnlFiltro: TPanel;
+    pnlHeaderFiltro: TRzPanel;
+    gbFiltroStatus: TGroupBox;
+    cbFiltroStatus: TComboBox;
+    lbFiltroStatus: TLabel;
+    gbFiltroAssunto: TGroupBox;
+    lbFiltroAssunto: TLabel;
+    cbFiltroAssunto: TComboBox;
+    gbFiltroAtendente: TGroupBox;
+    lbFiltroAtendente: TLabel;
+    cbFiltroAtendente: TComboBox;
+    btnFiltrar: TStyledSpeedButton;
     pnlData: TPanel;
-    cbFiltro: TComboBox;
-    lbFiltro: TLabel;
     lbTituloPeriodo_A: TLabel;
     pnlDataFinal: TRzPanel;
     lbDataFinal: TDateLabel;
@@ -80,6 +83,14 @@ type
     pnlDataInicial: TRzPanel;
     lbDataInicial: TDateLabel;
     dtDataInicial: TRzDateTimePicker;
+    pnlTipoFiltro: TPanel;
+    lbTipoFiltro: TLabel;
+    cbTipoFiltro: TComboBox;
+    pnlPeriodo: TRzPanel;
+    lbPeriodo: TLabel;
+    cbPeriodo: TComboBox;
+    lbTitulo: TLabel;
+    StyledSpeedButton1: TStyledSpeedButton;
 
     procedure FormShow(Sender: TObject);
 
@@ -104,8 +115,13 @@ type
     procedure grfBarrasClickSeries(Sender: TCustomChart; Series: TChartSeries;
       ValueIndex: Integer; Button: TMouseButton; Shift: TShiftState; X,
       Y: Integer);
-    procedure lbFiltroClick(Sender: TObject);
-    procedure cbFiltroCloseUp(Sender: TObject);
+    procedure lbTipoFiltroClick(Sender: TObject);
+    procedure cbTipoFiltroCloseUp(Sender: TObject);
+
+    procedure lbFiltroStatusClick(Sender: TObject);
+    procedure lbFiltroAtendenteClick(Sender: TObject);
+    procedure lbFiltroAssuntoClick(Sender: TObject);
+    procedure cbPeriodoCloseUp(Sender: TObject);
 
   private
     { Private declarations }
@@ -117,7 +133,6 @@ type
     Procedure RefreshConsulta;
     Procedure Consulta;
 
-
     { Public declarations }
   end;
 
@@ -127,6 +142,7 @@ var
   px,py : Integer;
   Ordem       : String;
   idOrdem     : integer;
+  ItemIndexAssunto, ItemIndexAtendente : integer;
 
 implementation
 
@@ -139,7 +155,8 @@ end;
 
 procedure TfrmCobranca.btnFiltrarClick(Sender: TObject);
 begin
- Periodo;
+ If cbTipoFiltro.ItemIndex = 0 Then
+   Periodo;
  RefreshConsulta;
 end;
 
@@ -170,17 +187,24 @@ begin
   Capture:= False;
 end;
 
-procedure TfrmCobranca.cbFiltroCloseUp(Sender: TObject);
+procedure TfrmCobranca.cbTipoFiltroCloseUp(Sender: TObject);
 begin
-  pnlFiltro.Align := alLeft;
+  pnlTipoFiltro.Align := alLeft;
   pnlPeriodo.Visible := (TComboBox(Sender).ItemIndex = 0) ;
   pnlData.Visible    := (TComboBox(Sender).ItemIndex = 1) ;
-  pnlFiltro.Align := alRight;
+  pnlTipoFiltro.Align := alRight;
 end;
 
 procedure TfrmCobranca.cbPeriodoChange(Sender: TObject);
 begin
   Periodo;
+  //On_Exit(Sender);
+end;
+
+procedure TfrmCobranca.cbPeriodoCloseUp(Sender: TObject);
+begin
+  Periodo;
+  On_Exit(Sender);
 end;
 
 procedure TfrmCobranca.dbGridChamadoTitleClick(Column: TColumn);
@@ -196,6 +220,9 @@ begin
   End
   Else tp := ' Asc';
 
+  str := 'Order by ' + Column.FieldName + tp;
+
+ {
   Case  Column.Index of
     0:Str :=  'Order by id' + tp;
     1:Str :=  'Order by status_char' + tp;
@@ -207,11 +234,14 @@ begin
     7:Str :=  'Order by mensagem_resposta_char' + tp;
     8:Str :=  'Order by data_inicio_m' + tp;
     9:Str :=  'Order by data_final_m' + tp;
-    10:Str:=  'Order by data_fechamento_m' + tp;
-    11:Str:=  'Order by data_hora_assumido_m' + tp;
+    10:Str:=  'Order by data_abertura_m' + tp;
+    11:Str:=  'Order by data_fechamento_m' + tp;
+    12:Str:=  'Order by data_hora_assumido_m' + tp;
 
     Else     Str :=  'Order by razao asc';
   End;
+}
+
   idOrdem := Column.Index;
   Ordem   := Str;
   ServicesCobranca.Ordem  :=  Str ;
@@ -223,14 +253,22 @@ procedure TfrmCobranca.FormShow(Sender: TObject);
 Begin
   ServicesCobranca := TServicesCobranca.Create;
   MesReferencia;
-  RefreshConsulta;
 
   Ordem   := 'Order by razao Asc'   ;
   ServicesCobranca.Ordem  :=  Ordem ;
   idOrdem := 3;
 
-  pnlPeriodo.Visible := (cbFiltro.ItemIndex = 0) ;
-  pnlData.Visible    := (cbFiltro.ItemIndex = 1) ;
+  pnlPeriodo.Visible := True;
+  pnlData.Visible    := False;
+
+  cbTipoFiltro.ItemIndex := 0;
+  cbFiltroStatus.ItemIndex := 0;
+  cbFiltroAssunto.ItemIndex := 0;
+  cbFiltroAtendente.ItemIndex := 0;
+  ItemIndexAssunto   := -1;
+  ItemIndexAtendente := -1;
+
+  RefreshConsulta;
 end;
 
 procedure TfrmCobranca.Grafico1;
@@ -302,11 +340,32 @@ begin
   End;
 end;
 
-procedure TfrmCobranca.lbFiltroClick(Sender: TObject);
+procedure TfrmCobranca.lbFiltroAssuntoClick(Sender: TObject);
 begin
-  lbFiltro.Visible := False;
-  cbFiltro.Visible := True;
-  cbFiltro.SetFocus;
+  lbFiltroAssunto.Visible := False;
+  cbFiltroAssunto.Visible := True;
+  cbFiltroAssunto.SetFocus;
+end;
+
+procedure TfrmCobranca.lbFiltroAtendenteClick(Sender: TObject);
+begin
+  lbFiltroAtendente.Visible := False;
+  cbFiltroAtendente.Visible := True;
+  cbFiltroAtendente.SetFocus;
+end;
+
+procedure TfrmCobranca.lbFiltroStatusClick(Sender: TObject);
+begin
+  lbFiltroStatus.Visible := False;
+  cbFiltroStatus.Visible := True;
+  cbFiltroStatus.SetFocus;
+end;
+
+procedure TfrmCobranca.lbTipoFiltroClick(Sender: TObject);
+begin
+  lbTipoFiltro.Visible := False;
+  cbTipoFiltro.Visible := True;
+  cbTipoFiltro.SetFocus;
 end;
 
 procedure TfrmCobranca.MesReferencia;
@@ -460,21 +519,43 @@ procedure TfrmCobranca.Consulta;
 begin
   With ServicesCobranca do
   Begin
- //   GraphicBar;
- //   GraphicPie;
- //   ListaGrupos(32,dtDataInicial.DateTime);
-    ListaChamado(32,dtDataInicial.DateTime);
+    ItemIndexAssunto   := cbFiltroAssunto.ItemIndex;
+    ItemIndexAtendente := cbFiltroAtendente.ItemIndex;
+
+    If cbTipoFiltro.ItemIndex = 0 Then Begin
+      ListaChamado(32,dtDataInicial.DateTime);
+    End
+    Else Begin
+      If cbTipoFiltro.ItemIndex = 1 Then
+        ListaChamado(32,dtDataInicial.DateTime, dtDataFinal.DateTime);
+    End;
   End;
 end;
 
 procedure TfrmCobranca.RefreshConsulta;
 begin
-
-  //dsQryGrupo.DataSet := nil;
   dsQryChamado.DataSet := nil;
 
   pPrincipal.Parent.Parent.Visible := false;
   TLoading.Show;
+
+  ServicesCobranca.FiltroSQL := '';
+
+  if (cbFiltroStatus.ItemIndex    > 0)
+  Or (cbFiltroAssunto.ItemIndex   > 0)
+  Or (cbFiltroAtendente.ItemIndex > 0) then Begin
+
+    If cbFiltroStatus.ItemIndex > 0 Then
+       ServicesCobranca.FiltroSQL := ServicesCobranca.FiltroSQL + 'AND status_char = ' + QuotedStr(cbFiltroStatus.Text)    + LineEnding;
+    If cbFiltroAssunto.ItemIndex > 0 Then
+       ServicesCobranca.FiltroSQL := ServicesCobranca.FiltroSQL + 'AND assunto     = ' + QuotedStr(cbFiltroAssunto.Text)   + LineEnding;
+    If cbFiltroAtendente.ItemIndex > 0 Then
+       ServicesCobranca.FiltroSQL := ServicesCobranca.FiltroSQL + 'AND tecnico     = ' + QuotedStr(cbFiltroAtendente.Text) + LineEnding;
+
+  End;
+
+  ServicesCobranca.Filtro := Not ServicesCobranca.FiltroSQL.IsEmpty;
+
   TLoading.ExecuteThread(procedure
   begin
     Consulta;
@@ -483,33 +564,57 @@ end;
 
 procedure TfrmCobranca.TerminateLoad(Sender: TObject);
 begin
-//  dbGridSetor.DataSource   := dsQryGrupo;
   dbGridChamado.DataSource := dsQryChamado;
 
   pPrincipal.Visible := True;
 
   With ServicesCobranca do
   Begin
-//    Series1.Clear;
-//    Series2.Clear;
-//    Series3.Clear;
 
-//    Series1.Add(QryPie.FieldByName('aberto').AsInteger , 'Abertos');
-//    Series1.Add(QryPie.FieldByName('fechado').AsInteger, 'Fechados');
+    If cbTipoFiltro.ItemIndex = 0 Then Begin
+      ListaCombobox(32,'assunto',dtDataInicial.DateTime);
+      cbFiltroAssunto.Clear;
+      cbFiltroAssunto.Items.Add('TODOS');
+      While Not QryCombobox.Eof do
+      Begin
+        cbFiltroAssunto.Items.Add(QryCombobox.FieldByName('assunto').AsString);
+        QryCombobox.Next;
+      End;
+      ListaCombobox(32,'tecnico',dtDataInicial.DateTime);
+      cbFiltroAtendente.Clear;
+      cbFiltroAtendente.Items.Add('TODOS');
+      While Not QryCombobox.Eof do
+      Begin
+        cbFiltroAtendente.Items.Add(QryCombobox.FieldByName('tecnico').AsString);
+        QryCombobox.Next;
+      End;
+    End
+    Else Begin
+      If cbTipoFiltro.ItemIndex = 1 Then
+        ListaCombobox(32,'assunto',dtDataInicial.DateTime, dtDataFinal.DateTime);
+        cbFiltroAssunto.Clear;
+        cbFiltroAssunto.Items.Add('TODOS');
+        While Not QryCombobox.Eof do
+        Begin
+          cbFiltroAssunto.Items.Add(QryCombobox.FieldByName('assunto').AsString);
+          QryCombobox.Next;
+        End;
+        ListaCombobox(32,'tecnico',dtDataInicial.DateTime, dtDataFinal.DateTime);
+        cbFiltroAtendente.Clear;
+        cbFiltroAtendente.Items.Add('TODOS');
+        While Not QryCombobox.Eof do
+        Begin
+          cbFiltroAtendente.Items.Add(QryCombobox.FieldByName('tecnico').AsString);
+          QryCombobox.Next;
+        End;
+    End;
 
-//    While Not ReturnQry.Eof do
-//    Begin
-//      Series2.Add(ReturnQry.FieldByName('qtd').AsInteger, ReturnQry.FieldByName('mes_vencimento').AsString);
-//      Series3.Add(ReturnQry.FieldByName('total').AsFloat);//, ReturnQry.FieldByName('mes_vencimento').AsString);
-      //cbPeriodo.Items.Add(ReturnQry.FieldByName('mes_vencimento').AsString);
-//      ReturnQry.Next;
-//    End;
-    //cbPeriodo.ItemIndex := 0;
-    //lbPeriodo.Caption := cbPeriodo.Text;
-
-//    dsQryGrupo.DataSet := QryGrupo;
+    cbFiltroAssunto.ItemIndex   := ItemIndexAssunto ;
+    cbFiltroAtendente.ItemIndex :=ItemIndexAtendente ;
     dsQryChamado.DataSet := QryChamado;
+
   End;
+
   pPrincipal.Parent.Parent.Visible := True;
   TLoading.Hide ;
 end;
